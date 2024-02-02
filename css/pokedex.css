@@ -1,10 +1,20 @@
-body {
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  font-size: 3em;
+}
+.page-title {
+  padding: 40px;
+  color: #434446;
+}
+body {
+  background: #c9c9c91c;
 }
 .pokemon-card {
-  padding: 20px;
   background: rgb(239, 239, 239);
   border-radius: 15px;
   color: white;
@@ -13,20 +23,154 @@ body {
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  flex: 1;
+  width: 100%;
+}
+.top-card {
+  position: relative;
+  padding: 45px 20px 20px 20px;
+  width: 100%;
+  border-radius: 6px 6px 0px 0px;
+}
+.bottom-card {
+  padding: 20px;
+  width: 100%;
+}
+
+.number {
+  position: absolute;
+  font-size: 0.7em;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px;
+  border-radius: 4px;
+}
+.title {
+  font-size: 1.2em;
+}
+
+.types {
+  display: flex;
+  justify-content: center;
 }
 a {
   color: white;
   text-decoration: none;
-  flex: 1;
+  width: calc(100% - 15px);
+  flex-grow: 1;
+}
+
+a:hover {
+  transform: scale(1.01);
 }
 .pokemon-container {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  padding-bottom: 40px;
 }
 .main-container {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+}
+
+.types {
+  display: flex;
+  gap: 10px;
+}
+.type {
+  padding: 4px;
+  border-radius: 4px;
+}
+.type-Bug {
+  background: #a8b820; /* Bug */
+}
+
+.type-Dark {
+  background: #705848; /* Dark */
+}
+
+.type-Dragon {
+  background: #7038f8; /* Dragon */
+}
+
+.type-Electric {
+  background: #f8d030; /* Electric */
+}
+
+.type-Fairy {
+  background: #ee99ac; /* Fairy */
+}
+
+.type-Fighting {
+  background: #c03028; /* Fighting */
+}
+
+.type-Fire {
+  background: #f08030; /* Fire */
+}
+
+.type-Flying {
+  background: #a890f0; /* Flying */
+}
+
+.type-Ghost {
+  background: #705898; /* Ghost */
+}
+
+.type-Grass {
+  background: #78c850; /* Grass */
+}
+
+.type-Ground {
+  background: #e0c068; /* Ground */
+}
+
+.type-Ice {
+  background: #98d8d8; /* Ice */
+}
+
+.type-Normal {
+  background: #a8a878; /* Normal */
+}
+
+.type-Poison {
+  background: #a040a0; /* Poison */
+}
+
+.type-Psychic {
+  background: #f85888; /* Psychic */
+}
+
+.type-Rock {
+  background: #b8a038; /* Rock */
+}
+
+.type-Steel {
+  background: #b8b8d0; /* Steel */
+}
+
+.type-Water {
+  background: #6890f0; /* Water */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1264px) {
+  /* CSS rules specific to tablets */
+  a {
+    width: calc(33% - 15px);
+  }
+}
+@media only screen and (min-width: 1265px) {
+  /* CSS rules specific to desktops */
+  a {
+    width: calc(16.5% - 15px);
+  }
+}
+.hide {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
+  transition: all 1s ease-in-out;
 }

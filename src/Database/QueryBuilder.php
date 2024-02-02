@@ -17,10 +17,18 @@ class QueryBuilder
 
     public function select(array $columns = ['*']): static
     {
-        $this->query = sprintf('SELECT %s', implode(', ', $columns));
-
+        if ($columns === ['*']) {
+            $this->query = 'SELECT *';
+        } else {
+            $columnsList = [];
+            foreach ($columns as $alias => $column) {
+                $columnsList[] = "$column AS $alias";
+            }
+            $this->query = 'SELECT ' . implode(', ', $columnsList);
+        }
         return $this;
     }
+
 
     public function from(string $table): static
     {
@@ -43,6 +51,12 @@ class QueryBuilder
     public function where(string $column, string $operator, string $value): static
     {
         $this->query = sprintf('%s WHERE %s %s %s', $this->query, $column, $operator, $value);
+
+        return $this;
+    }
+    public function innerJoin(string $column, string $operator, string $value): static
+    {
+        $this->query = sprintf('%s INNER JOIN %s %s %s', $this->query, $column, $operator, $value);
 
         return $this;
     }
