@@ -10,6 +10,10 @@ This is a simple pokedex using [the pokeAPI](https://pokeapi.co/).
 
 
 ```shell
+npm install
+```
+
+```shell
 npm run dev
 ```
 
