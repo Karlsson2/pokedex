@@ -2,7 +2,7 @@
 # Pokedex
 
 
-This is a simple pokedex using [the](https://pokeapi.co/). With a react frontend.
+This is a simple pokedex using [the pokeAPI](https://pokeapi.co/).
 
 # Installation
 
